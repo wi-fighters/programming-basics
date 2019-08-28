@@ -25,5 +25,3 @@ Between exercises, remember to run through [the recently-updated checklist](http
 0. The function only includes one return statement (you may need to add / change something else to make this work...)
 
 0. Every time the function is called, it should store the result in a global array (and still return it like before).
-
-0. Create a local array with place names 
