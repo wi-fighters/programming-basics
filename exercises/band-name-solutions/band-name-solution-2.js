@@ -1,7 +1,6 @@
-// Band name solution 2.2 (refactored to call other functions)
+// Band name solution 2.3 (refactored the extra funcs to make it DRY)
 
 // Declare a place to store results
-// Notice we can still push to an array declared as const
 const bandNames = [];
 
 // Some examples with console.log()
@@ -12,13 +11,12 @@ console.log(generateBandName('RED', 'cookies'));
 generateBandName('blue', 'ciabaTTas');
 generateBandName('purple', 'PASTA');
 
-// Notice that we can make multiple calls,
-// and the data will 'persist' (be saved) in the global variable
+// Show contents of the array
 console.log(bandNames);
 
-// Since we are using 'function declarations' (starting with the word 'function')
-// these will be hoisted. Hoisting means they can be
-// called on previous lines, before they are declared.
+// Test yourself: Can you explain why we are able to
+// call generateBandName before we declare it?
+// For a refresher, see comments in the previous version of this file.
 
 /**
  * Generate a band name based on the user's clothing color
@@ -37,15 +35,12 @@ console.log(bandNames);
  *  generateBandName('RED', 'cookies')
  */
 
-function generateBandName(rawColor, rawFood) {
+function generateBandName(clothingColor, lastFoodEaten) {
   let bandName = '';
 
-  // This time, let's outsource some of the work to other functions.
-  // Their return values will become available in this scope,
-  // since this is where we're calling them from.
-  // This allows us to store their return values in the variables below
-  let color = capitalizeColor(rawColor);
-  let food = capitalizeFood(rawFood);
+  // To keep things DRY, let's use just one function that does a very general job
+  let color = capitalizeInitial(clothingColor);
+  let food = capitalizeInitial(lastFoodEaten);
 
   // use the formatted inputs to build the return value
   bandName = `The ${color} ${food}!`;
@@ -57,17 +52,13 @@ function generateBandName(rawColor, rawFood) {
   return bandName;
 }
 
-function capitalizeColor(clothingColor) {
+function capitalizeInitial(rawString) {
   // Test yourself: To where does this value get returned?
-  return clothingColor[0].toUpperCase() + clothingColor.substr(1).toLowerCase();
+  return rawString[0].toUpperCase() + rawString.substr(1).toLowerCase();
 }
-
-function capitalizeFood(lastFoodEaten) {
-  // Test yourself: To where does this value get returned?
-  return lastFoodEaten[0].toUpperCase() + lastFoodEaten.substr(1).toLowerCase();
-}
-
-// Test yourself: What other things does hoisting affect? Hint: variables
 
 // Test yourself: Which of the above functions are pure? Which are impure?
-// For a refresher on pure functions, see the previous version of this file
+// For a refresher on pure functions, see a previous version of this file
+
+// Test yourself: Write the JSDocs for the capitalizeInitial function
+// This link may help: https://jsdoc.app/tags-returns.html
