@@ -14,8 +14,6 @@ E.g
 - With the input 'red' 'cookies', it should return 'The Red Cookies!'
 - With the input 'blue' 'ciabattas', it should return 'The Blue Ciabattas!'
 
-# New stuff
-
 Each line below is a new exercise. Use a new branch for each one.
 
 Between exercises, remember to run through [the recently-updated checklist](https://github.com/wi-fighters/how-to/blob/master/how-to-check-your-code.md) as you go.
@@ -25,3 +23,23 @@ Between exercises, remember to run through [the recently-updated checklist](http
 0. The function only includes one return statement (you may need to add / change something else to make this work...)
 
 0. Every time the function is called, it should store the result in a global array (and still return it like before).
+
+### New stuff
+
+0. generateBandName returns the same result as before, but this time by calling two other functions:
+
+    - capitalizeColor(clothingColor) which returns a string.
+    
+      E.g. if clothingColor is 'YeLlow', return 'Yellow'
+
+    - capitalizeFood(lastFoodEaten) which returns a string.
+    
+      E.g. if lastFoodEaten is 'PIE', return 'Pie'
+
+0. generateBandName returns the same result as before, but this time calls a single function twice:
+
+    - capitalizeInitial(rawString) which returns a string.
+
+      E.g. if rawString is 'crimson', return 'Crimson'
+
+      E.g. if rawString is 'KEBAB', return 'Kebab'
