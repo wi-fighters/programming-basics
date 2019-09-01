@@ -18,6 +18,6 @@ A lot of the time, developer time is more expensive than memory,
 especially on small projects.
 
 Take note of the decisions you make as you code, and
-consider ow you would discuss these with peers and interviewers.
+consider how you would discuss these with peers and interviewers.
 
 The following solutions I upload will build upon solution 2
