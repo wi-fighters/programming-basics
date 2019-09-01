@@ -1,4 +1,4 @@
-// Band name solution 2.3 (refactored the extra funcs to make it DRY)
+// Band name solution 2.4 (spice up the colors)
 
 // Declare a place to store results
 const bandNames = [];
@@ -39,7 +39,7 @@ function generateBandName(clothingColor, lastFoodEaten) {
   let bandName = '';
 
   // To keep things DRY, let's use just one function that does a very general job
-  let color = capitalizeInitial(clothingColor);
+  let color = makeTasty(capitalizeInitial(clothingColor));
   let food = capitalizeInitial(lastFoodEaten);
 
   // use the formatted inputs to build the return value
@@ -57,8 +57,41 @@ function capitalizeInitial(rawString) {
   return rawString[0].toUpperCase() + rawString.substr(1).toLowerCase();
 }
 
-// Test yourself: Which of the above functions are pure? Which are impure?
-// For a refresher on pure functions, see a previous version of this file
+/**
+ * Make a boring color delicious!
+ * 
+ * @param {string} color
+ * @return {string} tastyColor
+ * 
+ * @example
+ * 
+ *  makeTasty('Red')
+ */
+function makeTasty(color) {
+  let tastyColor = '';
+  
+  switch (color) {
+    case 'Red':
+      tastyColor = 'Chilli';
+      break;
+    case 'Orange':
+      tastyColor = 'Tangerine';
+      break;
+    case 'Yellow':
+      tastyColor = 'Pineapple';
+      break;
+    case 'Green':
+      tastyColor = 'Sage';
+      break;
+    case 'Blue':
+      tastyColor = 'Blueberry';
+      break;
+    case 'Purple':
+      tastyColor = 'Plum';
+      break;
+    default:
+      tastyColor = color;
+  }
 
-// Test yourself: Write the JSDocs for the capitalizeInitial function
-// This link may help: https://jsdoc.app/tags-returns.html
+  return tastyColor;
+}
