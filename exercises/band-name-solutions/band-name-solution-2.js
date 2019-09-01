@@ -1,10 +1,24 @@
-// Band name solution 2.1 (refactored to store results in an array)
-// See notes at the end for further reading
+// Band name solution 2.2 (refactored to call other functions)
 
-// For this exercise we're storing results in a global variable.
-// In another situation, this could be a database for example.
+// Declare a place to store results
+// Notice we can still push to an array declared as const
 const bandNames = [];
 
+// Some examples with console.log()
+console.log(generateBandName('blACK', 'spAGhetti'));
+console.log(generateBandName('RED', 'cookies'));
+
+// Some examples without console.log()
+generateBandName('blue', 'ciabaTTas');
+generateBandName('purple', 'PASTA');
+
+// Notice that we can make multiple calls,
+// and the data will 'persist' (be saved) in the global variable
+console.log(bandNames);
+
+// Since we are using 'function declarations' (starting with the word 'function')
+// these will be hoisted. Hoisting means they can be
+// called on previous lines, before they are declared.
 
 /**
  * Generate a band name based on the user's clothing color
@@ -23,45 +37,37 @@ const bandNames = [];
  *  generateBandName('RED', 'cookies')
  */
 
-function generateBandName(clothingColor, lastFoodEaten) {
-  // declare the return variable and indicate its type
+function generateBandName(rawColor, rawFood) {
   let bandName = '';
 
-  // format the input data and store it for later
-  let color = clothingColor[0].toUpperCase();
-  color += clothingColor.substr(1).toLowerCase();
-
-  let food = lastFoodEaten[0].toUpperCase();
-  food += lastFoodEaten.substr(1).toLowerCase();
+  // This time, let's outsource some of the work to other functions.
+  // Their return values will become available in this scope,
+  // since this is where we're calling them from.
+  // This allows us to store their return values in the variables below
+  let color = capitalizeColor(rawColor);
+  let food = capitalizeFood(rawFood);
 
   // use the formatted inputs to build the return value
   bandName = `The ${color} ${food}!`;
 
+  // update the global array
   bandNames.push(bandName);
   
-  // keep the return line short and sweet
+  // Test yourself: To where does this value get returned?
   return bandName;
 }
 
-// Since the function returns a string, we can log it to the console
-console.log(generateBandName('blACK', 'spAGhetti'));
-console.log(generateBandName('RED', 'cookies'));
+function capitalizeColor(clothingColor) {
+  // Test yourself: To where does this value get returned?
+  return clothingColor[0].toUpperCase() + clothingColor.substr(1).toLowerCase();
+}
 
-// But since it has the 'side effect' of saving to a global variable,
-// We could also just call it without console.log()
-// The result would still be pushed onto the bandNames array
-generateBandName('blue', 'ciabaTTas');
-generateBandName('purple', 'PASTA');
+function capitalizeFood(lastFoodEaten) {
+  // Test yourself: To where does this value get returned?
+  return lastFoodEaten[0].toUpperCase() + lastFoodEaten.substr(1).toLowerCase();
+}
 
-// Notice that we can make multiple calls,
-// and the global variable will remember the old data.
-console.log(bandNames);
+// Test yourself: What other things does hoisting affect? Hint: variables
 
-// Know your functions:
-// Since this function has a 'side effect', we say that it's an 'impure function'.
-// A 'pure function' would just return something without affecting anything outside itself.
-// Both kinds of function are useful at different times.
-// It's useful to be able to tell them apart.
-
-// Here's an article with more detail on pure functions
-// https://www.freecodecamp.org/news/what-is-a-pure-function-in-javascript-acb887375dfe/
+// Test yourself: Which of the above functions are pure? Which are impure?
+// For a refresher on pure functions, see the previous version of this file
