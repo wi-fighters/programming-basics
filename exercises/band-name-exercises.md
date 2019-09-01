@@ -43,3 +43,21 @@ Between exercises, remember to run through [the recently-updated checklist](http
       E.g. if rawString is 'crimson', return 'Crimson'
 
       E.g. if rawString is 'KEBAB', return 'Kebab'
+
+4. In the same file, write a function called `makeTasty` that takes `color` as a parameter. This func should...
+
+  - Use the accumulator pattern with just one return statement
+    For a refresher, accumulator pattern was shown in band-name-solution-1.js
+
+  - Use a switch statement to determine the return value, using this guide:
+  ```
+    If the input is 'Red',    return 'Chilli'.
+    If the input is 'Orange', return 'Tangerine'.
+    If the input is 'Yellow', return 'Pineapple'.
+    If the input is 'Green',  return 'Sage'.
+    If the input is 'Blue',   return 'Blueberry'.
+    If the input is 'Purple', return 'Plum'.
+  ```
+
+- To call makeTasty, modify only one existing line in `generateBandName`.
+- Do not add or remove any lines of code from `generateBandName`.
