@@ -10,22 +10,21 @@
 // accepts an expression as a parameter
 // this method will evaluate expressions to a string,
 // so that JS knows which characters should be printed to the terminal
-console.log('blah');
+console.log((5 > 4) ? 'true-blah' : 'nah');
 
-// function greet(person) {
+function greet(person) {
+    // if statement conditions must also be expressions
+    // in this case, the expression will evaluate to a boolean,
+    // so that JS knows which blocks of code should run
+    if (person === 'pirate') {
+        return 'ahoy';
+    } else if (person === 'aussie') {
+        return 'oi';
+    } else {
+        return 'hi, who are you?';
+    }
+}
 
-//     // if statement conditions must also be expressions
-//     // in this case, the expression will evaluate to a boolean,
-//     // so that JS knows which blocks of code should run
-//     if (person === 'pirate') {
-//         return 'ahoy';
-//     } else if (person === 'aussie') {
-//         return 'oi';
-//     } else {
-//         return 'hi, who are you?';
-//     }
-// }
-
-// // console.log(greet('pirate'));
-// console.log(greet('aussie'));
-// console.log(greet('student'));
+console.log(greet('pirate'));
+console.log(greet('aussie'));
+console.log(greet('student'));
