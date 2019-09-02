@@ -1,22 +1,27 @@
-// This code is broken :(
-// We are trying to access a function before declaring it
+// The code works now :D
+// Since variables declared with the 'const' and 'let' keywords
+// are not hoisted, we moved them above other parts of the code
+// which rely on them.
 
-talk('aussie');
-
+// in this case, talk() calls a function that uses
+// talkPirate() and greetAnAustralian(),
+// so before we hit the line of code that calls talk(),
+// we need to already have those other functions declared
 
 // this function does one job and does it well
 const talkPirate = function() {
     return 'ahoy';
-}
+};
 
 // this function does one job and does it well
-const greetAnAustralian = function() {
-    return 'oi';
-} 
+// You can shorten this syntax to a single line
+const greetAnAustralian = function() { return 'oi'; };
 
-// this is our main function
-// its job is to make sure the right code gets run at the right time
-// it doesn't care about details
+talk('aussie');
+
+// this function defined with declaration syntax
+// DOES get hoisted before any code runs,
+// so it's ok to call it before we declare it 
 function talk(person) {
     if (person === 'pirate') {
         console.log(talkPirate());
