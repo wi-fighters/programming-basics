@@ -1,34 +1,28 @@
-// There are different ways to define a function
+// This code is broken :(
+// We are trying to access a function before declaring it
 
-// One way: function declaration syntax. It begins with the 'function' keyword
-// function greet(person) {
-//     if (person === 'pirate') {
-//         return 'ahoy';
-//     } else if (person === 'aussie') {
-//         return 'oi';
-//     } else {
-//         return 'hi, who are you?';
-//     }
-// }
+talk('aussie');
 
-// Another way: function expression syntax
-// Assigns an anonymous (nameless) function to a variable
-let sayGreeting = 'Heyo';
-console.log(sayGreeting);
 
-sayGreeting = function(person) {
+// this function does one job and does it well
+const talkPirate = function() {
+    return 'ahoy';
+}
+
+// this function does one job and does it well
+const greetAnAustralian = function() {
+    return 'oi';
+} 
+
+// this is our main function
+// its job is to make sure the right code gets run at the right time
+// it doesn't care about details
+function talk(person) {
     if (person === 'pirate') {
-        return 'ahoy';
+        console.log(talkPirate());
     } else if (person === 'aussie') {
-        return 'oi';
+        console.log(greetAnAustralian());
     } else {
-        return 'hi, who are you?';
+        console.log(`I've never met a ${person} before.`)
     }
 }
-// function reference (Here's a function, so call me maybe)
-console.log(sayGreeting);
-// function call (will be replaced by a return value if there is one)
-console.log(sayGreeting('aussie'));
-
-// console.log(greet('pirate'));
-// console.log(greet('student'));
