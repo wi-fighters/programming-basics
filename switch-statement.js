@@ -1,4 +1,4 @@
-// switch statements are useful for testing the value of a single variable
+// switch statements are useful for testing the exact value of a single variable
 // the switch block will match the FIRST valid case
 // then run ALL the code underneath, until it hits a BREAK statement
 // try commenting out different parts of this code to see it in action
@@ -33,14 +33,14 @@ console.log(weather);
 
 // equivalent if statement (does the same job)
 
-// if (season === 'Summer') {
-//     weather = 'hot';
-// } else if (season === 'Autumn' || season === 'Fall') {
-//     weather = 'windy';
-// } else if (season === 'Winter') {
-//     weather = 'cold';
-// } else if (season === 'Spring') {
-//     weather = 'rainy';
-// } else {
-//     weather = "That's not a season I've heard of. Please try again.";
-// }
+if (season === 'Summer') {
+    weather = 'hot';
+} else if (season === 'Autumn' || season === 'Fall') {
+    weather = 'windy';
+} else if (season === 'Winter') {
+    weather = 'cold';
+} else if (season === 'Spring') {
+    weather = 'rainy';
+} else {
+    weather = "That's not a season I've heard of. Please try again.";
+}
