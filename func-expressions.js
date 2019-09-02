@@ -1,28 +1,17 @@
-// The code works now :D
-// Since variables declared with the 'const' and 'let' keywords
-// are not hoisted, we moved them above other parts of the code
-// which rely on them.
-
-// in this case, talk() calls a function that uses
-// talkPirate() and greetAnAustralian(),
-// so before we hit the line of code that calls talk(),
-// we need to already have those other functions declared
-
-// this function does one job and does it well
-const talkPirate = function() {
-    return 'ahoy';
-};
-
-// this function does one job and does it well
-// You can shorten this syntax to a single line
-const greetAnAustralian = function() { return 'oi'; };
-
+// This time, the global scope doesn't know details about how to talk.
+// All we know is that if we call talk(),
+// it will privately figure out how to talk
 talk('aussie');
 
-// this function defined with declaration syntax
-// DOES get hoisted before any code runs,
-// so it's ok to call it before we declare it 
 function talk(person) {
+    
+    // We can also declare these as 'private variables'
+    // So that only the function knows about them.
+    // Test yourself: Since they are declared with const,
+    // what scope do these variables have?
+    const talkPirate = function() { return 'ahoy'; };
+    const greetAnAustralian = function() { return 'oi'; };
+
     if (person === 'pirate') {
         console.log(talkPirate());
     } else if (person === 'aussie') {
