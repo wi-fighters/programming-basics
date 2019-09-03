@@ -1,17 +1,19 @@
 const talkPirate = function() { return 'ahoy'; };
 const greetAnAustralian = function() { return 'oi'; };
 
-// A CALLBACK is when we pass in a reference to
-// a function (without parentheses)
-// so that it can be called later
-console.log(talk(talkPirate));
+// When we pass a function reference, it's called a CALLBACK
+// But here we are grabbing the return value of talkPirate().
+// (talkToJenna is not able to call the argument)  
+console.log(talkToJenna(talkPirate()));
 // the above line is the same as
-// console.log(talk(function() { return 'ahoy'; }));
+// console.log(talkToJenna('ahoy'));
 
-function talk(howToTalk) {
-    return howToTalk();
-    // the above line is the same as
-    // return 'ahoy';
+function talkToJenna(howToTalk) { // I'm expecting something like 'ahoy'
+    let greeting = '';
+
+    greeting = `${howToTalk} Jenna!`
+
+    return greeting;
 }
 
 /**
