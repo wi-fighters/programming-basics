@@ -1,22 +1,25 @@
-// This time, the global scope doesn't know details about how to talk.
-// All we know is that if we call talk(),
-// it will privately figure out how to talk
-talk('aussie');
+const talkPirate = function() { return 'ahoy'; };
+const greetAnAustralian = function() { return 'oi'; };
 
-function talk(person) {
-    
-    // We can also declare these as 'private variables'
-    // So that only the function knows about them.
-    // Test yourself: Since they are declared with const,
-    // what scope do these variables have?
-    const talkPirate = function() { return 'ahoy'; };
-    const greetAnAustralian = function() { return 'oi'; };
+// A CALLBACK is when we pass in a reference to
+// a function (without parentheses)
+// so that it can be called later
+console.log(talk(talkPirate));
+// the above line is the same as
+// console.log(talk(function() { return 'ahoy'; }));
 
-    if (person === 'pirate') {
-        console.log(talkPirate());
-    } else if (person === 'aussie') {
-        console.log(greetAnAustralian());
-    } else {
-        console.log(`I've never met a ${person} before.`)
-    }
+function talk(howToTalk) {
+    return howToTalk();
+    // the above line is the same as
+    // return 'ahoy';
 }
+
+/**
+ * talkPirate
+ * is a function reference. This gets replaced by
+ * function() { return 'ahoy'; }
+ * 
+ * talkPirate()
+ * is a function call. This gets replaced by
+ * 'ahoy'
+ */
