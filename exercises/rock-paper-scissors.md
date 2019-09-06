@@ -11,7 +11,7 @@
 ## Honest Rock Paper Scissors
 
 1. Declare a constant variable, and initialize it with an anonymous arrow function that takes one argument.
-2. The function sould return 'rock', 'paper' or 'scissors' randomly.
+2. The function should return 'rock', 'paper' or 'scissors' randomly.
 3. When we write something other than 'rock', 'paper' or 'scissors' as an argument, the function should return "I'm an honest function bro, be honest too and just write 'rock', 'paper', or 'scissors' as an argument".
 4. What if I pass in a number as an argument? The function should still work as described in step 3.
 5. What if I pass in 'SciSSORs' or 'ROcK' as an argument?  The function should still work as described in step 2.
