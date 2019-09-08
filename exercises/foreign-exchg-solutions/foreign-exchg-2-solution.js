@@ -23,14 +23,14 @@ const getAudFromEur = function(amount) {
   // 1 EUR = 1.62072 AUD
   const rate = 1.62072;
   return amount * rate;
-}
+};
 
 // arrow function expression syntax (new in ES6) 
 const getChfFromEur = (amount) => {
   // 1 EUR = 1.08329 CHF
   const rate = 1.08329;
   return amount * rate;
-}
+};
 
 console.log(convertFromEur(100, 'AUD'));
 console.log(convertFromEur(200, 'JPY'));
