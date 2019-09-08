@@ -17,17 +17,17 @@ function getJpyFromEur(amount) {
   return amount * rate;
 }
 
-const getAudFromEur = function(amount) {
+function getAudFromEur(amount) {
   // 1 EUR = 1.62072 AUD
   const rate = 1.62072;
   return amount * rate;
-};
+}
 
-const getChfFromEur = (amount) => {
+function getChfFromEur(amount) {
   // 1 EUR = 1.08329 CHF
   const rate = 1.08329;
   return amount * rate;
-};
+}
 
 console.log(convertFromEur(100, 'AUD'));
 console.log(convertFromEur(200, 'JPY'));
