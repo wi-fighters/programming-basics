@@ -3,22 +3,24 @@
 // What happens if you use let / const?
 // Can you follow the program flow, step by step?
 // Can you describe what the code is doing at each step?
+// Can you predict the value of the variables at each step?
 // Can you predict which values will be logged before you run it?
 
 // experiment, get confused, have fun :)
 
 function a() {
-    myVar = 2;
-    console.log(myVar); // 2
+    var myVar = 2;
+    console.log(myVar);
 
     function b() {
-        console.log(myVar); // 2
+        var myVar;
+        console.log(myVar);
     }
 
     b();
 }
 
-let myVar = 1; // 2
-console.log(myVar); // 1
+var myVar = 1;
+console.log(myVar);
 a();
-console.log(myVar); // 2
+console.log(myVar);
