@@ -30,7 +30,7 @@ Create all functions as arrow function expressions assigned to constant variable
 
 ### Part one: refactor `init`
 
-1. Refactor your `init` function so it returns an array called `api`.
+1. Refactor your `init` function so it declares a new array called `api` and returns this new array.
 
 2. Before `init` returns, it should push your `create` function into the `api` array.
 
