@@ -17,7 +17,7 @@ const init = () => {
         // which would mean the db is no longer encapsulated (private)
     };
 
-    api.push(create);
+    api.push(create, read);
 
     return api;
 };
@@ -31,10 +31,8 @@ const createInDb = dbApi[0];
 console.log('\nAfter calling the inner function once, the return value is:');
 console.log(createInDb('everybooody'));
 
-
 console.log('\nAfter calling the inner function a 2nd time, the return value is:');
 console.log(createInDb('backstreet\'s'));
-
 
 console.log('\nAfter calling the inner function a 3rd time, the return value is:');
 console.log(createInDb('back'));
