@@ -7,6 +7,8 @@ const init = () => {
         return db.length;
     };
 
+    api.push(create);
+    
     return api;
 };
 
