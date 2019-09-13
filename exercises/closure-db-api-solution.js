@@ -1,12 +1,13 @@
 const init = () => {
     const db = [];
+    const api = [];
 
     const create = (newElement) => {
         db.push(newElement);
         return db.length;
     };
 
-    return create;
+    return api;
 };
 
 const createInDb = init();
