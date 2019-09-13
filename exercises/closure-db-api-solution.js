@@ -7,6 +7,16 @@ const init = () => {
         return db.length;
     };
 
+    const read = () => {
+        // Use the spread operator to return a copy of the array.
+        return [...db];
+
+        // If we did this instead...
+        // return db;
+        // ...then the original db would be modifiable from the outer execution context,
+        // which would mean the db is no longer encapsulated (private)
+    };
+
     api.push(create);
 
     return api;
