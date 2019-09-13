@@ -1,11 +1,12 @@
 const init = () => {
     const db = [];
 
-    const create = () => {
-
+    const create = (newElement) => {
+        db.push(newElement);
+        return db.length;
     };
 
     return create;
 };
 
-console.log(init());
+console.log(init()());
