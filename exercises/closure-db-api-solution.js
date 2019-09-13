@@ -8,11 +8,15 @@ const init = () => {
     };
 
     api.push(create);
-    
+
     return api;
 };
 
-const createInDb = init();
+// get the API
+const dbApi = init();
+
+// extract each func from the API and give it a meaningful name
+const createInDb = dbApi[0];
 
 console.log('\nAfter calling the inner function once, the return value is:');
 console.log(createInDb('everybooody'));
