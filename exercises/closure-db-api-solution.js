@@ -27,15 +27,24 @@ const dbApi = init();
 
 // extract each func from the API and give it a meaningful name
 const createInDb = dbApi[0];
+const readDb = dbApi[1];
 
-console.log('\nAfter calling the inner function once, the return value is:');
+console.log('\nAfter calling create once, the return value is:');
 console.log(createInDb('everybooody'));
+console.log('At this point, the DB contains:');
+console.log(readDb());
 
-console.log('\nAfter calling the inner function a 2nd time, the return value is:');
+console.log('\nAfter calling create a 2nd time, the return value is:');
 console.log(createInDb('backstreet\'s'));
+console.log('At this point, the DB contains:');
+console.log(readDb());
 
-console.log('\nAfter calling the inner function a 3rd time, the return value is:');
+console.log('\nAfter calling create a 3rd time, the return value is:');
 console.log(createInDb('back'));
+console.log('At this point, the DB contains:');
+console.log(readDb());
 
-console.log('\nAfter calling the inner function a 4th time, the return value is:');
+console.log('\nAfter calling create a 4th time, the return value is:');
 console.log(createInDb('alright'));
+console.log('At this point, the DB contains:');
+console.log(readDb());
