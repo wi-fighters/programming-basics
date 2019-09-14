@@ -4,6 +4,7 @@ const init = () => {
 
   const create = (newElement) => {
       db.push(newElement);
+      console.log(`New element added! The new length of the array is ${db.length}`);
       return db.length;
   };
 
