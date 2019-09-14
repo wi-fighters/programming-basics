@@ -14,9 +14,10 @@ const init = () => {
   const update = (index, newElement) => {
     const oldElement = db[index];
     if (typeof oldElement === 'undefined') {
-     return 'Error: could not update because there was no element at the specified index. Please try a different index.';
+      create(newElement);
+    } else {
+      db[index] = newElement;
     }
-    db[index] = newElement;
     return oldElement;
   };
 
@@ -57,5 +58,6 @@ console.log(readDb());
 console.log(updateInDb(3, 'in town'));
 console.log(readDb());
 
+// Test yourself: Why does this line print undefined?
 console.log(updateInDb(4, 'yeah yeah yeah'));
 console.log(readDb());
