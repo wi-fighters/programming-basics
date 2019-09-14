@@ -68,6 +68,7 @@ Create all functions as arrow function expressions assigned to constant variable
 4. Make sure your `update` function is exposed so it can be accessed from outside `init`.
 
 ### Part 4: Add `delete`
+(except call it `remove` because `delete` is a reserved word in JS)
 
 1. Following the same pattern as above, add a new function to your API called `remove`. This function should:
   - accept one parameter: the index of the element to delete.
