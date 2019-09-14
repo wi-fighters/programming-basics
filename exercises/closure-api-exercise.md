@@ -73,6 +73,7 @@ Create all functions as arrow function expressions assigned to constant variable
 1. Following the same pattern as above, add a new function to your API called `remove`. This function should:
   - accept one parameter: the index of the element to delete.
   - delete the db element at the given index if it exists.
+  - return the deleted element
   - If there is no existing element at the given index, return an error message.
 
 2. Expose `remove` so it can be accessed from outside the `init` function.
