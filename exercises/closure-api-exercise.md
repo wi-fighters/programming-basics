@@ -63,7 +63,7 @@ Create all functions as arrow function expressions assigned to constant variable
 2. Refactor `update` to change its behavior when there's no `db` element at the given index.
 - This time, instead of returning an error message, it should call the `create` function and pass in the new element. 
 
-3. Refactor the `create` function so it returns a string like: 'New element added! The new length of the array is 7.'
+3. Refactor the `create` function so it prints this message before returning the new length: 'New element added! The new length of the array is 7.'
 
 4. Make sure your `update` function is exposed so it can be accessed from outside `init`.
 
