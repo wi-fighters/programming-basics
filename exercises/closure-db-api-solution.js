@@ -8,14 +8,19 @@ const init = () => {
   };
 
   const read = () => {
-      // Ooooh ok so this was bad!
-      // return db;
-      // What happens if we try the same hack
-      // after returning a copy?
       return [...db];
   };
 
-  api.push(create, read);
+  const update = (index, newElement) => {
+    const oldElement = db[index];
+    if (typeof oldElement === 'undefined') {
+     return 'Error: could not update because there was no element at the specified index. Please try a different index.';
+    }
+    db[index] = newElement;
+    return oldElement;
+  };
+
+  api.push(create, read, update);
 
   return api;
 };
@@ -26,9 +31,9 @@ const dbApi = init();
 // extract each func from the API and give it a meaningful name
 const createInDb = dbApi[0];
 const readDb = dbApi[1];
+const updateInDb = dbApi[2];
 
 console.log('\nWrite some things to db and read the contents each time...');
-console.log('No surprises so far...');
 console.log(createInDb('everybooody'));
 console.log(readDb());
 
@@ -41,49 +46,16 @@ console.log(readDb());
 console.log(createInDb('alright'));
 console.log(readDb());
 
-console.log("\nBut I wonder if there's another way in...");
+console.log('\nUpdate some things in the db and read the contents each time...');
 
-// store a reference to the original db
-const stolenDb = readDb();
-
-// ... wipe the whole thing! :o
-stolenDb.length = 0;
-
-console.log("\nWhat's the first thing in the original db now?");
-console.log(readDb()[0]);
-
-console.log("\nWait, what?? Let's look at the whole db");
+console.log(updateInDb(0, 'the boys'));
 console.log(readDb());
 
-// Storing it in a variable is optional.
-// We could also do this:
-console.log("\nThis time we can't use read function to write things!");
-readDb()[0] = `
-                            8b.
-                            888b
-                            8888b
-                            88888b
-                            888888b
-                          .d88888888b.__
-                    _.od888888888888888888boo..._
-                .od8888888888888888888888888888888booo.._
-             .od888888888888888888888888888888888888888888)
-           .d888P'    "Y88888888888888888888(_   _ )888P"'
-         .d8888Poo.     \`Y88888888888888888P-.\`-\`@'.-'""-.
-.oooooood8888888P""'      \`"Y8888888P.d888P   \`---'"""".-'
-d888888888'888P'  _...-----..__      'd88888__...------'
-\`""Y88888'8888|-'              \`----'|88888P
-      \`Y8888b                       Y888P
-       888888b                       \`"'
-        Y88888
- jgs/VK  \`Y88P
-           YP
-`;
+console.log(updateInDb(1, 'are'));
+console.log(readDb());
 
-console.log("\nWhat's in the original db now?");
-console.log(readDb()[0]);
-console.log(readDb()[1]);
-console.log(readDb()[2]);
-console.log(readDb()[3]);
+console.log(updateInDb(3, 'in town'));
+console.log(readDb());
 
-console.log("\nPhew! Much better.");
+console.log(updateInDb(4, 'yeah yeah yeah'));
+console.log(readDb());
