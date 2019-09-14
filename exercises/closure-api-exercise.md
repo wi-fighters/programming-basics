@@ -57,6 +57,7 @@ Create all functions as arrow function expressions assigned to constant variable
 1. Following the same pattern as above, add a new function to your API called `update`. This function should:
   - accept two parameters: an index and a new element.
   - replace the db element at the given index with the new element (if it already exists).
+  - return the deleted element
   - If there is no existing element at the given index, return an error message.
 
 2. Refactor `update` to change its behavior when there's no `db` element at the given index.
@@ -64,7 +65,7 @@ Create all functions as arrow function expressions assigned to constant variable
 
 3. Refactor the `create` function so it returns a string like: 'New element added! The new length of the array is 7.'
 
-4. Expose `update` so it can be accessed from outside the `init` function.
+4. Make sure your `update` function is exposed so it can be accessed from outside `init`.
 
 ### Part 4: Add `delete`
 
