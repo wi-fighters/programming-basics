@@ -57,21 +57,13 @@ console.log(nestedData.innerData.order[1])
 // 4
 
 
-const nestedData = {
-    innerData: {
-        order: ["first", "second", "third"],
-        snacks: ["chips", "fruit", "crackers"],
-        numberData: {
-            primeNumbers: [1, 3, 5, 7, 9],
-            fibonnaci: [1, 1, 2, 3, 5, 8, 13]
-        },
-        addSnack: function (snack) {
+ /* addSnack: function (snack) {
             console.log("WHAT IS THIS?", this)
             this.snacks.push(snack);
             return this;
-        }
-    }
-}
+        } .   */
+
+
 
 // NESTED OBJECT PART 2
 
