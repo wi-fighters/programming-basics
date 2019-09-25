@@ -148,3 +148,14 @@ function addCountry(name, capital, population) {
         population: population
     }
 }
+
+
+
+addSpeaker('BWd');
+console.log(nestedObject.speakers);
+
+addLanguage('Ar', 'مرحبا');
+console.log(nestedObject.data.languages);
+
+addCountry('France', 'Paris', 2344556667);
+console.log(nestedObject.data.continents.europe);
