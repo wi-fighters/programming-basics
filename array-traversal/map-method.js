@@ -20,6 +20,10 @@ console.log('\n1. for loop')
 const forResult = [];
 
 for (let i = 0; i < people.length; i++) {
+    console.log('\nsource array:', people);
+    console.log('current index:', i);
+    console.log('current element:', people[i]);
+
     forResult.push(people[i].toLocaleUpperCase());
 }
 
@@ -30,11 +34,14 @@ console.log(forResult);
  * 2. for... of loop
 */
 
-forOfResult = [];
+const forOfResult = [];
 
 console.log('\n2. for... of loop');
 
-for (const person of people) {
+for (const person of people) { // current element of source array
+    console.log('\nsource array:', people);
+    console.log('current index:', people.indexOf(person));
+    console.log('current element:', person);
     forOfResult.push(person.toLocaleUpperCase());
 }
 
@@ -52,9 +59,24 @@ const logPerson = (person) => {
     return person.toLocaleUpperCase();
 };
 
-const namedCallbackResult = people.map(logPerson);
+// const logPersonOldSchool = function(person) {
+//     return person.toLocaleUpperCase();
+// };
 
-console.log(namedCallbackResult)
+const namedCallbackResult = people.map(logPerson);
+// Behind the scenes, map is doing this:
+// const namedCallbackResult = [
+//     logPerson(people[0]),
+//     logPerson(people[1]),
+//     logPerson(people[2])
+// ];
+
+// Behind the scenes, map is calling this:
+// logPerson(people[0]);
+// logPerson(people[1]);
+// logPerson(people[2]);
+
+console.log(namedCallbackResult);
 
 /**
  * 4. map, where the callback passed is an anonymous function
@@ -63,7 +85,21 @@ console.log(namedCallbackResult)
 console.log('\n4. map, where the callback passed is an anonymous function')
 
 // We can define the callback with any function _expression_ syntax.
+
+// Here's an example of old-school function expression syntax (ES5 and earlier)
+// const anonCallbackResultOne = people.map(function(person) {
+//     return person.toLocaleUpperCase();
+// });
+
+// Old school on one line
+// const anonCallbackResultOne = people.map(function(person) { return person.toLocaleUpperCase(); });
+
 // Here's an example of arrow function syntax using shorthand for a single parameter.
+const anonCallbackResultOne = people.map(person => {
+    return person.toLocaleUpperCase();
+});
+
+// Arrow function on one line
 const anonCallbackResultOne = people.map(person => { return person.toLocaleUpperCase(); });
 
 console.log(anonCallbackResultOne);
