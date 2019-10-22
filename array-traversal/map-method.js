@@ -95,9 +95,9 @@ console.log('\n4. map, where the callback passed is an anonymous function')
 // const anonCallbackResultOne = people.map(function(person) { return person.toLocaleUpperCase(); });
 
 // Here's an example of arrow function syntax using shorthand for a single parameter.
-const anonCallbackResultOne = people.map(person => {
-    return person.toLocaleUpperCase();
-});
+// const anonCallbackResultOne = people.map(person => {
+//     return person.toLocaleUpperCase();
+// });
 
 // Arrow function on one line
 const anonCallbackResultOne = people.map(person => { return person.toLocaleUpperCase(); });
