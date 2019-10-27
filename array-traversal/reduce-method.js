@@ -4,7 +4,7 @@
 // The reduce method can be used any time you reach for accumulator pattern to traverse an array
 
 // For example, if you're doing something like:
-// - set up a varaible to store a result
+// - set up a variable to store a result
 // - loop over an array and change the result each time
 // - return the result
 // then this is a good time to be using reduce instead.
