@@ -1,6 +1,6 @@
 // Array.prototype.filter: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
-// The filter method takes a callback as an argument
+// The filter method takes a callback as an argument ('filtering function')
 // The callback should take an element of the source array as an argument, and return a boolean
 // If the element should be returned in the resulting array, the callback should return true
 
