@@ -33,7 +33,7 @@ const isOverFive = (element) => {
     return keepThisElement;
 
     // all the above in a one-liner:
-    // return typeof element === 'number' && !Number.isNaN(element) && element > 5
+    // return typeof element === 'number' && !Number.isNaN(element) && element > 5;
 };
 
 const greaterThanFive = tests[0].filter(isOverFive);
@@ -41,7 +41,7 @@ console.log('\noriginal:\t\t', tests[0]);
 console.log('greaterThanFive:\t', greaterThanFive);
 
 const positiveNums = tests[1].filter((el) => {
-    return el >= 0
+    return el >= 0;
 });
 
 console.log('\noriginal:\t\t', tests[1]);
