@@ -1,6 +1,6 @@
 // Array.prototype.filter: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
-// The filter method takes a callback as an argument
+// The filter method takes a callback as an argument ('filtering function')
 // The callback should take an element of the source array as an argument, and return a boolean
 // If the element should be returned in the resulting array, the callback should return true
 
@@ -33,7 +33,7 @@ const isOverFive = (element) => {
     return keepThisElement;
 
     // all the above in a one-liner:
-    // return typeof element === 'number' && !Number.isNaN(element) && element > 5
+    // return typeof element === 'number' && !Number.isNaN(element) && element > 5;
 };
 
 const greaterThanFive = tests[0].filter(isOverFive);
@@ -41,7 +41,7 @@ console.log('\noriginal:\t\t', tests[0]);
 console.log('greaterThanFive:\t', greaterThanFive);
 
 const positiveNums = tests[1].filter((el) => {
-    return el >= 0
+    return el >= 0;
 });
 
 console.log('\noriginal:\t\t', tests[1]);
